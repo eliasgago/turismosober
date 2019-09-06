@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <div class="map">
       <the-map></the-map>
-    </div>
+      <the-menu></the-menu>
   </div>
 </template>
 
 <script>
 import { TheMap } from '@/components'
+import { TheMenu } from '@/components'
 
 export default {
   components: {
-    TheMap
+    TheMap,
+    TheMenu
   },
   created() {
     console.log('HomeView created')
@@ -29,6 +30,6 @@ export default {
 }
 .map {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
 }
 </style>

@@ -5,7 +5,7 @@ const L = window.L;
 
 const mapConfig = {
 
-    DEFAULT_CENTER:  [42.377868406560, -7.538507194519],
+    DEFAULT_CENTER:  [42.447868406560, -7.538507194519],
 
     DEFAULT_ZOOM: 11,
 

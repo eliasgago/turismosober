@@ -10,12 +10,3 @@ class Mirador(models.Model):
     def __str__(self):
         ret = self.nombre
         return ret
-
-
-class Carretera(models.Model):
-    descripcion = models.CharField(max_length=100)
-    geom = models.LineStringField()
-
-    def __str__(self):
-        ret = self.nombre
-        return ret
