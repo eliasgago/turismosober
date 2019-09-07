@@ -12,7 +12,10 @@ const store = new Vuex.Store({
     map: {
       viewpointsGeoJSON: null,
       roadsGeoJSON: null,
-      viewpointsRoadsGeoJSON: null
+      viewpointsRoadsGeoJSON: null,
+      show: {
+        viewpointsRoads: true 
+      }
     },
   },
 
@@ -28,6 +31,11 @@ const store = new Vuex.Store({
     [mutations.SET_MAP_VIEWPOINTS_ROADS](state, viewpointsRoadsGeoJSON) {
       console.log('MUTATION - SET_MAP_VIEWPOINTS_ROADS', viewpointsRoadsGeoJSON);
       state.map.viewpointsRoadsGeoJSON = viewpointsRoadsGeoJSON
+    },
+    [mutations.SET_MAP_LAYER_VISIBILITY](state, mapLayer) {
+      console.log('MUTATION - SET_MAP_LAYER_VISIBILITY', mapLayer);
+      state.map.show[mapLayer] = !state.map.show[mapLayer];
+      console.log('MUTATION - SET_MAP_LAYER_VISIBILITY', state.map.show[mapLayer]);
     },
   },
   actions: {
@@ -60,6 +68,9 @@ const store = new Vuex.Store({
           );
       }
     },
+    changeLayerVisibility({ commit }, mapLayer) {
+      commit(mutations.SET_MAP_LAYER_VISIBILITY, mapLayer)
+    }
   }
 })
 

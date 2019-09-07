@@ -63,8 +63,6 @@ const map = L.Map.extend({
             maxZoom: 18
         }).addTo(this);
 
-        
-
         this.viewpointsLayerGroup = new ViewpointsLayerGroup([], this);
         this.roadsLayerGroup = new RoadsLayerGroup([], this);
         this.viewpointsRoadsLayerGroup = new ViewpointsRoadsLayerGroup([], this);
@@ -97,6 +95,15 @@ const map = L.Map.extend({
         console.log('viewpointsRoadsGeoJSON', viewpointsRoadsGeoJSON)
         if(viewpointsRoadsGeoJSON && this.viewpointsRoadsLayerGroup) {
             this.viewpointsRoadsLayerGroup.setData(viewpointsRoadsGeoJSON);
+        }
+    },
+
+    showLayerMap(layerName, show) {
+        console.log('showLayerMap', layerName, show)
+        if(show) {
+            this.getPane(layerName).style.visibility = 'visible';
+        } else{
+            this.getPane(layerName).style.visibility = 'hidden';
         }
     },
 

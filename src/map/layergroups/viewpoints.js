@@ -28,7 +28,8 @@ const ViewpointsLayerGroup = BaseLayerGroup.extend({
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
-                radius: 50
+                radius: 50,
+                pane: this.options.pane
             }).bindPopup(viewpointsData[i].nombre).addTo(this);
         }
 

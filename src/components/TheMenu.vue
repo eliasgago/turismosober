@@ -1,20 +1,20 @@
 <template lang="html">
   <div class="menu">
-    <div class="menu-button">
+    <a class="menu-button" href="#" v-on:click="toggleOnMap('viewpointsRoads')">
       <span class="menu-button-title">Miradores</span>
-    </div>
-    <div class="menu-button">
+    </a>
+    <a class="menu-button" href="#">
       <span class="menu-button-title">Embarcaderos</span>
-    </div>
-    <div class="menu-button">
+    </a>
+    <a class="menu-button" href="#">
       <span class="menu-button-title">Alojamientos</span>
-    </div>
-    <div class="menu-button">
+    </a>
+    <a class="menu-button" href="#">
       <span class="menu-button-title">Bodegas</span>
-    </div>
-    <div class="menu-button">
+    </a>
+    <a class="menu-button" href="#">
       <span class="menu-button-title">Restaurantes</span>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -34,7 +34,10 @@ export default {
     
   },
   methods: {
-
+    toggleOnMap(layerName) {
+      console.log('toggleOnMap: ' + layerName);
+      this.$store.dispatch("changeLayerVisibility", layerName);
+    }
   },
   mounted() {
   }
@@ -50,7 +53,7 @@ export default {
   flex-wrap: wrap
 
   .menu-button
-    background-color: grey
+    background-color: red
     border-radius: 4px
     height: 90px
     width: 90px
@@ -59,7 +62,7 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-    font-size: 10pt
+    font-size: 9pt
     font-weight: bold
 
     .menu-button-title

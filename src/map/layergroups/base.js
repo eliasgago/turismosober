@@ -126,7 +126,16 @@ const BaseLayerGroup = L.Proj.GeoJSON.extend({
 
     setClickListener(listener) {
         this.clickListener = listener;
+    },
+
+    removeLayerFromMap() {
+        this.map.removeLayer(this);
+    },
+
+    addLayerToMap() {
+        this.map.addLayer(this)
     }
+
 
 });
 

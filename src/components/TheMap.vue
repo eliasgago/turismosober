@@ -25,6 +25,9 @@ export default {
     },
     viewpointsRoadsGeoJSON() {
       return this.$store.state.map.viewpointsRoadsGeoJSON
+    },
+    showViewPointsRoads() {
+      return this.$store.state.map.show.viewpointsRoads
     }
   },
   watch: {
@@ -38,6 +41,11 @@ export default {
     viewpointsRoadsGeoJSON(viewpointsRoadsGeoJSON) {
       console.log('calling setViewpointsRoads', viewpointsRoadsGeoJSON)
       this.map.setViewpointsRoads(viewpointsRoadsGeoJSON)
+    },
+    showViewPointsRoads(showViewPointsRoads) {
+      console.log('calling showViewPointsRoads', showViewPointsRoads)
+      this.map.showLayerMap('viewpointsRoads', showViewPointsRoads)
+      this.map.showLayerMap('viewpoints', showViewPointsRoads)
     }
   },
   methods: {

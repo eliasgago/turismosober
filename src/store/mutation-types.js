@@ -7,6 +7,8 @@ const mutationsTypes = {
 
   SET_MAP_VIEWPOINTS_ROADS: "setViewpointsRoads",
 
+  SET_MAP_LAYER_VISIBILITY: "setMapLayerVisibility",
+
 }
 
 export default mutationsTypes;
